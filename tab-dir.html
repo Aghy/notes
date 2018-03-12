@@ -1,0 +1,32 @@
+<section>
+  <ul id="tabs">
+    <li>
+      <a href="" ng-click="panel.selectTab(1)">Plunker! 1</a>
+    </li>
+    <li>
+      <a href="" ng-click="panel.selectTab(2)">Plunker! 2</a>
+    </li>
+    <li>
+      <a href="" ng-click="panel.selectTab(3)">Plunker! 3</a>
+    </li>
+  </ul>
+
+  <div id="first" class="panel" ng-show="panel.tab === 1">
+    <img src="http://www.yalla-shoot.com/images/upload/images/as-roma-vs-ac-milan.jpg" />
+    <h2>1st thing</h2>
+    <p>the first thing comes first</p>
+  </div>
+
+  <div id="second" class="panel" ng-show="panel.tab === 2">
+    <img src="http://www.yalla-shoot.com/images/upload/images/bayern-munich-vs-hertha-berlin.jpg" />
+    <h2>2nd thing</h2>
+    <p>the second thing comes mid</p>
+  </div>
+
+  <div id="third" class="panel" ng-show="panel.tab === 3">
+    <img src="http://www.yalla-shoot.com/images/upload/images/arsenal-fc-vs-manchester-city.jpg" />
+    <h2>3rd thing</h2>
+    <p>the third thing comes last</p>
+  </div>
+  
+</section>

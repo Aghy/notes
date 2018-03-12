@@ -1,0 +1,18 @@
+<div id="ncForm">
+  <input type="text" ng-model="nc.writtenNote">
+  <input type="submit" value="add" ng-click="nc.addNote(nc.writtenNote)">
+  <ul id="todo" class="list-group">
+    <li ng-blur="nc.editNoteContent()" ng-repeat="note in nc.notes" id="{{'li-' + $index}}" class="list-group-item">
+    <div class="hardLine">  
+      <span ng-click="nc.toggleClass($index)" class="handCursor">
+            <i class="fas fa-check-circle"></i>
+      </span>
+      <span ng-Dblclick="nc.editNote($index)" class="content">{{note.content}}</span>
+      <span ng-click="nc.removeNote($index)" class="handCursor">
+            <i class="fas fa-trash-alt"></i>
+      </span>
+    </div>  
+    </li>
+  </ul>
+  
+</div>
