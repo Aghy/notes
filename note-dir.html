@@ -2,8 +2,8 @@
   <input type="text" ng-model="nc.writtenNote">
   <input type="submit" value="add" ng-click="nc.addNote(nc.writtenNote)">
   <ul id="todo" class="list-group">
-    <li ng-blur="nc.editNoteContent()" ng-repeat="note in nc.notes" id="{{'li-' + $index}}" class="list-group-item">
-    <div class="hardLine">  
+    <li ng-repeat="note in nc.notes" id="{{'li-' + $index}}" class="list-group-item">
+    <div class="hardLine">
       <span ng-click="nc.toggleClass($index)" class="handCursor">
             <i class="fas fa-check-circle"></i>
       </span>

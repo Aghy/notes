@@ -32,9 +32,9 @@
   }
 
   function NoteDirController($compile, $scope) {
-    var vm = this, notes = [];
+    var vm = this;
+    var notes = [];
     this.notes = notes;
-    this.writtenNote;
     
     this.addNote = function(text) {
       var note = {};
@@ -49,22 +49,21 @@
     this.editNote = function(index) {
       var listItem = '#li-' + index ;
       $(listItem + " .hardLine").hide();
-      var editTextBox = '<input id="textEdit" type="text" value="{{nc.notes['+index+'].content}}" />';
+      var editTextBox = '<input id="textEdit" type="text" ng-model="nc.notes['+index+'].content" value="{{nc.notes['+index+'].content}}" />';
       var link = $compile(editTextBox);
       var content = link($scope);
-      console.log(editTextBox);
       $(content).appendTo(listItem);
       $(content).focus();
       $('#textEdit').on('blur', this.editNoteContent);
-    }
+    };
     
     this.editNoteContent = function() {
       var parent = $(this).parent();
       var listItem = '#' + $(parent).attr('id');
-      $(listItem + ' .content').text($('#textEdit').val());
+      //$(listItem + ' .content').text($('#textEdit').val());
       $('#textEdit').remove();
       $(listItem + " .hardLine").show();
-    }
+    };
     
     this.toggleClass = function(index) {
       var listItem = "li-" + index;
